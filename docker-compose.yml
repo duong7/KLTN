@@ -1,0 +1,17 @@
+version: '3'
+services:
+  jupyter:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - C:/Users/Admin/DACN:/home/jovyan
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+  
+  streamlit-app:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
